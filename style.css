@@ -48,6 +48,7 @@ a:not(.connection):not(.caption) {
 	position: relative;
 	text-decoration: none;
 	font-weight: 400;
+	white-space: nowrap;
 }
 a:not(.connection):not(.caption)::before {
 	content: "";
