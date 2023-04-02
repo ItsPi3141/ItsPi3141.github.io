@@ -7,6 +7,9 @@ document.getElementById("dreamlte-download").addEventListener("click", () => {
 document.getElementById("dreamlte-tree").addEventListener("click", () => {
 	window.open("https://github.com/ItsPi3141/samsung_exynos8895_manifest");
 });
+document.getElementById("alpacaelectron-github").addEventListener("click", () => {
+	window.open("https://github.com/ItsPi3141/alpaca-electron");
+});
 document.getElementById("intervoyage-invite").addEventListener("click", () => {
 	window.open("https://discord.com/api/oauth2/authorize?client_id=1076395857961811988&permissions=0&scope=bot%20applications.commands");
 });
@@ -56,3 +59,9 @@ document.querySelector("#discord-modal div.modal-content code").addEventListener
 		document.querySelector("#discord-modal div.modal-content p").classList.add("error");
 	}
 });
+
+(async () => {
+	var alpaca_electron_stats = await (await fetch("https://api.github.com/repos/ItsPi3141/alpaca-electron")).json();
+	document.getElementById("alpacaelectron-stars").innerText = alpaca_electron_stats.stargazers_count;
+	document.getElementById("alpacaelectron-forks").innerText = alpaca_electron_stats.forks_count;
+})();

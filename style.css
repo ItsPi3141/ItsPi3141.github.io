@@ -279,7 +279,7 @@ button:disabled:active {
 	position: fixed;
 	top: 0;
 	margin: 0;
-	width: calc(100vw - 69px * 2 - 11px);
+	width: calc(100vw - 69px * 2);
 }
 #nav.stick-to-top + #nav-placeholder {
 	height: 69px;
@@ -318,7 +318,10 @@ a.connection p {
 }
 .connection:hover {
 	box-shadow: 5px 5px 10px #121212, -5px -5px 10px #1e1e1e;
-	border: 1px #202020 solid;
+	border: 1px #fff2 solid;
+}
+#places .connection:hover {
+	border: 1px #ffffff08 solid;
 }
 .github:hover {
 	background-color: #000000;
@@ -419,6 +422,11 @@ a.caption {
 .card-detail {
 	max-width: calc(100% - 200px - 30px);
 }
+.card-detail h3 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
 .card-detail p {
 	font-weight: 100;
 	line-height: 1.25;
@@ -435,14 +443,29 @@ a.caption {
 	box-shadow: 10px 10px 20px transparent, -10px -10px 20px transparent;
 	transition: all 0.3s ease-in-out;
 }
+.card-img-sm {
+	width: 32px;
+	height: 32px;
+	background-size: cover;
+	align-self: center;
+	border-radius: 25px;
+	box-shadow: 10px 10px 20px transparent, -10px -10px 20px transparent;
+	transition: all 0.3s ease-in-out;
+}
 .card-img:not(.android):hover {
 	box-shadow: 10px 10px 20px #0a0a0a, -10px -10px 20px #282828;
 	transform: scale(1.01);
 }
-.card-img.intervoyage {
+.card-img.alpacaelectron,
+.card-img-sm.alpacaelectron {
+	background-image: url(images/alpacaelectron.png);
+}
+.card-img.intervoyage,
+.card-img-sm.intervoyage {
 	background-image: url(images/intervoyage.png);
 }
-.card-img.elonbot {
+.card-img.elonbot,
+.card-img-sm.elonbot {
 	background-image: url(images/elonbot.png);
 }
 
@@ -452,6 +475,7 @@ a.caption {
 	margin-bottom: -20px;
 	background-size: cover;
 	border-radius: 1px;
+	align-self: flex-end;
 }
 @media (max-width: 768px) {
 	.card-img.android {
@@ -462,7 +486,12 @@ a.caption {
 	.card-detail {
 		max-width: calc(100%);
 	}
-	.card-img.android {
+	.card-img {
+		display: none;
+	}
+}
+@media (min-width: 666px) {
+	.card-img-sm {
 		display: none;
 	}
 }
@@ -475,4 +504,16 @@ a.caption {
 .card-actions {
 	display: flex;
 	gap: 15px;
+}
+
+.github-stats {
+	display: flex;
+	gap: 8px;
+	margin: 16px 0;
+}
+.github-stats p {
+	margin: 0;
+}
+.github-stats p:not(:last-child) {
+	margin-right: 12px;
 }
