@@ -405,14 +405,19 @@ div:hover > #connections ~ .dropdown-nav,
 #connections ~ .dropdown-nav:hover {
 	height: 200px;
 }
+
 #places::after,
 #connections::after {
 	content: "‹";
 	width: 0.5em;
 	height: 1.3em;
 	text-align: center;
-	transform: rotate(270deg);
+	transform: rotate(-90deg);
 	transition: transform 0.2s;
+}
+#nav.menu-up #places::after,
+#nav.menu-up #connections::after {
+	transform: rotate(90deg);
 }
 
 #main-bg {
