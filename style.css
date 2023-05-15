@@ -274,7 +274,8 @@ button:disabled:active {
 	height: 69px;
 	background-color: #181818;
 	z-index: 420;
-	justify-content: space-between;
+	justify-content: start;
+	gap: 2em;
 }
 #nav.stick-to-top {
 	position: fixed;
@@ -293,6 +294,16 @@ button:disabled:active {
 		justify-content: center;
 	}
 }
+#nav > div h2 {
+	font-weight: 200;
+	font-size: 1.25em;
+	height: 1.8em;
+}
+#nav > h2 {
+	font-weight: 600;
+	font-size: 1.5em;
+}
+
 a.connection p {
 	margin: 0;
 }
@@ -305,20 +316,21 @@ a.connection p {
 .connection {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 	gap: 12px;
-	padding: 12px 15px;
+	padding: 8px 15px;
+	height: 2em;
 	text-decoration: none;
 	background-color: transparent;
 	transition: all 0.3s ease-out;
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	box-shadow: 5px 5px 10px transparent, -5px -5px 10px transparent;
 	border: 1px transparent solid;
 	user-select: none;
 	cursor: pointer;
 }
 .connection:hover {
-	box-shadow: 5px 5px 10px #121212, -5px -5px 10px #1e1e1e;
+	box-shadow: 5px 5px 10px #12121288, -5px -5px 10px #1e1e1e88;
 	border: 1px #fff2 solid;
 }
 #places .connection:hover {
@@ -335,6 +347,28 @@ a.connection p {
 }
 .reddit:hover {
 	background-color: #ff4300;
+}
+
+.dropdown-nav {
+	position: absolute;
+	background-color: #191919;
+	border: #fff0 solid 0px;
+	border-top: none !important;
+	border-radius: 0 0 10px 10px;
+	overflow: hidden;
+	height: 0;
+	transition: all 0.2s;
+}
+
+div:hover > #places ~ .dropdown-nav,
+#places ~ .dropdown-nav:hover {
+	border: #fff1 solid 1px;
+	height: 100px;
+}
+div:hover > #connections ~ .dropdown-nav,
+#connections ~ .dropdown-nav:hover {
+	border: #fff1 solid 1px;
+	height: 200px;
 }
 
 #main-bg {
