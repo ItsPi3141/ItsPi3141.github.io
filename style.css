@@ -276,6 +276,7 @@ button:disabled:active {
 	z-index: 420;
 	justify-content: start;
 	gap: 2em;
+	user-select: none;
 }
 #nav.stick-to-top {
 	position: fixed;
@@ -294,6 +295,15 @@ button:disabled:active {
 		justify-content: center;
 	}
 }
+
+div.dropdown-nav-cont {
+	display: flex;
+	flex-direction: column;
+}
+#nav.menu-up div.dropdown-nav-cont {
+	flex-direction: column-reverse;
+}
+
 #nav > div h2 {
 	font-weight: 200;
 	font-size: 1.25em;
@@ -352,23 +362,57 @@ a.connection p {
 .dropdown-nav {
 	position: absolute;
 	background-color: #191919;
-	border: #fff0 solid 0px;
-	border-top: none !important;
+	border: #fff0 solid 1px;
+	border-top: none;
 	border-radius: 0 0 10px 10px;
 	overflow: hidden;
 	height: 0;
-	transition: all 0.2s;
+	min-width: 9em;
+	margin-left: -0.75em;
+	margin-top: calc(4.3em - 1px);
+	transition: height 0.2s;
+	display: flex;
+	flex-direction: column;
 }
-
+#nav.menu-up .dropdown-nav {
+	margin-bottom: calc(4.3em - 2px);
+	margin-top: 0;
+	border: #fff0 solid 1px;
+	border-radius: 10px 10px 0 0;
+	flex-direction: column-reverse;
+}
+div:hover > #connections ~ .dropdown-nav,
 div:hover > #places ~ .dropdown-nav,
+#connections ~ .dropdown-nav:hover,
 #places ~ .dropdown-nav:hover {
 	border: #fff1 solid 1px;
+	border-top: none;
+	margin-top: 4.3em;
+}
+#nav.menu-up div:hover > #connections ~ .dropdown-nav,
+#nav.menu-up div:hover > #places ~ .dropdown-nav,
+#nav.menu-up #connections ~ .dropdown-nav:hover,
+#nav.menu-up #places ~ .dropdown-nav:hover {
+	border: #fff1 solid 1px;
+	border-bottom: none;
+	margin-bottom: 4.3em;
+}
+div:hover > #places ~ .dropdown-nav,
+#places ~ .dropdown-nav:hover {
 	height: 100px;
 }
 div:hover > #connections ~ .dropdown-nav,
 #connections ~ .dropdown-nav:hover {
-	border: #fff1 solid 1px;
 	height: 200px;
+}
+#places::after,
+#connections::after {
+	content: "‹";
+	width: 0.5em;
+	height: 1.3em;
+	text-align: center;
+	transform: rotate(270deg);
+	transition: transform 0.2s;
 }
 
 #main-bg {

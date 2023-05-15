@@ -23,6 +23,12 @@ document.addEventListener("scroll", () => {
 	} else {
 		document.getElementById("nav").classList.remove("stick-to-top");
 	}
+
+	if (this.scrollY > 300) {
+		document.getElementById("nav").classList.remove("menu-up");
+	} else {
+		document.getElementById("nav").classList.add("menu-up");
+	}
 });
 
 const scrollBehavior = { block: "center", inline: "center", behavior: "smooth" };
