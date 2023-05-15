@@ -1,0 +1,87 @@
+body {
+	background: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+}
+* {
+	font-family: "IBM Plex Sans";
+	color: white;
+}
+*::selection {
+	background: white;
+	color: black;
+}
+
+button {
+	background: black;
+	border: white solid 1px;
+	font-size: 1.15em;
+	padding: 0.25em 0.5em;
+	font-weight: 400;
+	cursor: pointer;
+	outline: none;
+}
+button:hover * {
+	color: black;
+}
+button:hover {
+	background: white;
+	color: black;
+}
+
+#cover {
+	height: 92vh;
+	margin-bottom: 8vh;
+	width: 60vw;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: end;
+}
+#cover h1 {
+	font-weight: 400;
+	font-size: 8em;
+	margin: 0;
+}
+@media screen and (max-width: 1200px) {
+	#cover {
+		width: calc(100vw - 4em);
+	}
+}
+@media screen and (max-width: 970px) {
+	#cover h1 {
+		font-size: 6em;
+	}
+}
+@media screen and (max-width: 750px) {
+	#cover h1 {
+		font-size: 4em;
+	}
+}
+#cover h3 {
+	margin-top: 0;
+	font-weight: 400;
+	font-size: 1.75em;
+}
+
+#logo {
+	margin: 8em 0;
+}
+#logo img {
+	border-radius: 3px;
+}
+#logo img,
+#logo div::before {
+	width: 256px;
+	height: 256px;
+}
+#logo div::before {
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: -999;
+	background-image: url(../images/alpacaelectron.png);
+	filter: blur(50px);
+}
