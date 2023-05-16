@@ -6,12 +6,38 @@ body {
 	margin: 0;
 }
 * {
-	font-family: "IBM Plex Sans";
+	font-family: "IBM Plex Sans", san-serif;
 	color: white;
 }
 *::selection {
 	background: white;
 	color: black;
+}
+
+*::-webkit-scrollbar {
+	-webkit-appearance: none;
+	background-color: #000;
+}
+*::-webkit-scrollbar:vertical {
+	width: 11px;
+}
+*::-webkit-scrollbar:horizontal {
+	height: 11px;
+}
+*::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 3px solid #000; /* should match background, can't be transparent */
+	background-color: #696969;
+	transition: all 0.3s;
+}
+*::-webkit-scrollbar-thumb:hover {
+	border-radius: 8px;
+	border: 2px solid #000; /* should match background, can't be transparent */
+	background-color: #aaaaaa;
+}
+*::-webkit-scrollbar-track {
+	background-color: #000;
+	border-radius: 8px;
 }
 
 button {
@@ -41,6 +67,35 @@ button.secondary {
 }
 button.secondary:hover {
 	border-bottom: #696969 solid 1px;
+}
+
+#nav {
+	display: flex;
+	flex-direction: row;
+	height: 4em;
+	width: 100%;
+	align-items: center;
+	justify-content: start;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #0008;
+	backdrop-filter: blur(15px);
+	padding: 0 2em;
+	gap: 4em;
+}
+#nav button {
+	height: 3em;
+	width: 15vw;
+	box-sizing: border-box;
+}
+#nav button:hover {
+	background: black;
+	border: blackart;
+}
+#nav h2 {
+	margin: 0;
+	font-family: "SF UI Text", sans-serif;
 }
 
 #cover {
