@@ -351,7 +351,10 @@ a.connection p {
 	background-color: #000000;
 }
 .xda:hover {
-	background-color: #a601c8;
+	background-color: #ea7100;
+}
+.twitter:hover {
+	background-color: #1da1f2;
 }
 .discord:hover {
 	background-color: #5663f0;
@@ -404,7 +407,7 @@ div:hover > #places ~ .dropdown-nav,
 }
 div:hover > #connections ~ .dropdown-nav,
 #connections ~ .dropdown-nav:hover {
-	height: 200px;
+	height: 250px;
 }
 
 #places::after,
