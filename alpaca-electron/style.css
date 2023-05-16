@@ -15,20 +15,32 @@ body {
 }
 
 button {
-	background: black;
-	border: white solid 1px;
-	font-size: 1.15em;
-	padding: 0.25em 0.5em;
-	font-weight: 400;
 	cursor: pointer;
 	outline: none;
+	font-size: 1.15em;
 }
-button:hover * {
+button.primary {
+	padding: 0.25em 0.5em;
+	font-weight: 400;
+	background: black;
+	border: white solid 1px;
+}
+button.primary:hover * {
 	color: black;
 }
-button:hover {
+button.primary:hover {
 	background: white;
 	color: black;
+}
+button.secondary {
+	background: none;
+	border: none;
+	border-bottom: white solid 1px;
+	padding: 0;
+	height: 1.5em;
+}
+button.secondary:hover {
+	border-bottom: #696969 solid 1px;
 }
 
 #cover {
@@ -64,6 +76,12 @@ button:hover {
 	margin-top: 0;
 	font-weight: 400;
 	font-size: 1.75em;
+}
+.button-row {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	align-items: center;
 }
 
 #logo {

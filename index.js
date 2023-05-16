@@ -1,8 +1,8 @@
 document.getElementById("surnia-download").addEventListener("click", () => {
-	location.href = "surnia-roms/index.html";
+	location.href = "surnia-roms/";
 });
 document.getElementById("dreamlte-download").addEventListener("click", () => {
-	location.href = "dreamlte-roms/index.html";
+	location.href = "dreamlte-roms/";
 });
 document.getElementById("dreamlte-tree").addEventListener("click", () => {
 	window.open("https://github.com/ItsPi3141/samsung_exynos8895_manifest");
@@ -11,7 +11,7 @@ document.getElementById("alpacaelectron-github").addEventListener("click", () =>
 	window.open("https://github.com/ItsPi3141/alpaca-electron");
 });
 document.getElementById("alpacaelectron-website").addEventListener("click", () => {
-	location.href = "alpaca-electron/index.html";
+	location.href = "alpaca-electron/";
 });
 document.getElementById("intervoyage-invite").addEventListener("click", () => {
 	window.open("https://discord.com/api/oauth2/authorize?client_id=1076395857961811988&permissions=0&scope=bot%20applications.commands");
